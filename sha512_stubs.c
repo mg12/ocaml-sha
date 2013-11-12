@@ -25,7 +25,7 @@ static inline int sha512_file(char *filename, sha512_digest *digest)
 	int fd; ssize_t n;
 	struct sha512_ctx ctx;
 
-	fd = open(filename, O_RDONLY | O_CLOEXEC);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return 1;
 	sha512_init(&ctx);

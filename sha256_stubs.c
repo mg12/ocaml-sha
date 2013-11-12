@@ -25,7 +25,7 @@ static inline int sha256_file(char *filename, sha256_digest *digest)
 	int fd; ssize_t n;
 	struct sha256_ctx ctx;
 
-	fd = open(filename, O_RDONLY | O_CLOEXEC);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return 1;
 	sha256_init(&ctx);
